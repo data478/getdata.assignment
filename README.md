@@ -1,4 +1,4 @@
-Getting and Cleaning Data -- Project
+Getting and Cleaning Data on Human Activity Recognition Using Smartphones Data Set
 ==================
 
 The script ```run_analysis.R``` assumes that the source data is in a
