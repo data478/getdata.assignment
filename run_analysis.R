@@ -1,16 +1,9 @@
 # assuming that Dataset.zip was unzipped in the current directory
 # creating subdirectory UCI HAR Dataset
 
-# BIG data sets (takes long time to read)
 # feature records
-test_set_orig  <- read.table(file="UCI HAR Dataset/test/X_test.txt", header=F)
-train_set_orig  <- read.table(file="UCI HAR Dataset/train/X_train.txt", header=F)
-
-#-------------
-# make a copy: we will be modifying these ones but will be able to restore them them quickly
-# during interactive work
-test_set <- test_set_orig
-train_set <- train_set_orig
+test_set  <- read.table(file="UCI HAR Dataset/test/X_test.txt", header=F)
+train_set  <- read.table(file="UCI HAR Dataset/train/X_train.txt", header=F)
 
 # activity type - one per feature record
 test_act <- read.table(file="UCI HAR Dataset/test/y_test.txt", header=F)
@@ -48,11 +41,6 @@ names(train_set) <- feat_lab$var.name
 #==============================================================================
 
 # join subject and activity information with feature records
-
-test_set_bkp <- test_set
-train_set_bkp <- train_set
-# test_set <- test_set_bkp
-# train_set <- train_set_bkp
 
 test_set <-  cbind(test_subj,  test_act, test_set)
 names(test_set)[c(1,2)] <- c("subject", "activity")
